@@ -30,7 +30,7 @@ class TupleTest {
 
   @Test def unapplyJSTupleInDestructuringUseCase(): Unit = {
     val obj = js.Tuple2(42, "foobar")
-    val js.Tuple2(t1, t2) = obj
+    val js.Tuple2(t1, t2) = obj: @unchecked
 
     val t1IsInt: Int = t1
     val t2IsString: String = t2

@@ -67,11 +67,11 @@ class ObjectTest {
     val entries = js.Object.entries(obj)
     assertEquals(2, entries.length)
 
-    val js.Tuple2(key1, value1) = entries(0)
+    val js.Tuple2(key1, value1) = entries(0): @unchecked
     assertEquals("a", key1)
     assertEquals(42, value1)
 
-    val js.Tuple2(key2, value2) = entries(1)
+    val js.Tuple2(key2, value2) = entries(1): @unchecked
     assertEquals("b", key2)
     assertEquals("foo", value2.asInstanceOf[String])
   }
@@ -85,12 +85,12 @@ class ObjectTest {
     val entries = js.Object.entries(dict)
     assertEquals(2, entries.length)
 
-    val js.Tuple2(key1, value1) = entries(0)
+    val js.Tuple2(key1, value1) = entries(0): @unchecked
     assertEquals("a", key1)
     val value1IsInt: Int = value1
     assertEquals(42, value1IsInt)
 
-    val js.Tuple2(key2, value2) = entries(1)
+    val js.Tuple2(key2, value2) = entries(1): @unchecked
     assertEquals("b", key2)
     val value2IsInt: Int = value2
     assertEquals(0, value2IsInt)

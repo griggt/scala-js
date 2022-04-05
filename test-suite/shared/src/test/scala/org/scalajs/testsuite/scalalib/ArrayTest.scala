@@ -18,7 +18,7 @@ import org.junit.Assert._
 class ArrayTest {
   @Test def unapplySeq_Issue3445(): Unit = {
     val args: Array[String] = Array("foo", "bar", "foobar")
-    val Array(x, xs @ _*) = args
+    val Array(x, xs @ _*) = args: @unchecked
     assertEquals("foo", x)
     assertEquals(Seq("bar", "foobar"), xs)
   }
